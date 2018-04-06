@@ -1,0 +1,48 @@
+.mainLabel {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    margin-left: 30%;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight:bold;
+
+}
+
+/*.timetableTable {*/
+
+/*}*/
+
+.timetableTableHeader {
+    color: #343452;
+    font-weight:bold;
+}
+
+.timetableTableBody {
+    color: #3c3e3c;
+
+}
+.bimage{
+ background-color: #56b9d0;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 15px;
+    background: #ECE9E0;
+    border: 16px solid #ECE9E0;
+    border-radius: 20px;
+    margin-left: 10%;
+    margin-top: 45px;
+    width: 80%;
+    box-shadow: 0 0 0 10px rgba(3, 1, 22, 0.42);
+}
+th {
+    font-size: 18px;
+    padding: 10px;
+}
+td {
+    background:  #7ad5ea;
+    padding: 10px;
+}

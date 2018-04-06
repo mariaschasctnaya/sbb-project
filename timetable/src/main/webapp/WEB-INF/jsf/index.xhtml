@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:o="http://omnifaces.org/ui">
+<h:head>
+    <link rel="stylesheet" href="#{resource['css/timetableInfoStyles.css']}"/>
+</h:head>
+<h:body styleClass="bimage">
+<f:view >
+    <h:outputLabel value="Timetable for station : #{timetableController.station}" styleClass="mainLabel"/>
+    <h:dataTable value="#{timetableController.trainTimetableList}" var="timetable" styleClass="timetableTable" rowClasses="timetableTableBody" headerClass="timetableTableHeader">
+        <h:column>
+                <f:facet name="header">TRAIN INFORMATION </f:facet>
+                <h:outputText value="#{timetable.id}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">ARRIVED TIME</f:facet>
+            <h:outputText value="#{timetable.arrivedTime}"/>
+        </h:column>
+        <h:column styleClass="timetableTableBody">
+            <f:facet name="header">DEPARTURE TIME</f:facet>
+            <h:outputText value="#{timetable.departureTime}"/>
+        </h:column>
+        <h:column styleClass="timetableTableBody">
+            <f:facet name="header">STATUS</f:facet>
+            <h:outputText value="#{timetable.status}"/>
+        </h:column>
+    </h:dataTable>
+    <o:socket channel="clock" scope="application" onmessage="socketListener"/>
+
+    <script type="text/javascript">
+        function socketListener(message, channel, event) {
+            console.log(message);
+            window.location.reload();
+        }
+    </script>
+</f:view>
+
+</h:body>
+</html>

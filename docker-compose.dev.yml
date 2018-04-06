@@ -1,0 +1,15 @@
+version: '2'
+services:
+
+  train:
+    build: train
+
+  train-db:
+    build: mysql
+    ports:
+      - 5000:3306
+
+  timetable:
+    build: timetable
+    ports:
+      - 9990:9990
