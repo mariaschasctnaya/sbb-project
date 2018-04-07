@@ -6,7 +6,7 @@ import javax.enterprise.inject.Produces;
 
 
 public class ObjectMapperProducer {
-
+// Deserialize in Java objects
     @Produces
     private ObjectMapper objectMapper() {
         return new ObjectMapper();

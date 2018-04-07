@@ -52,7 +52,7 @@ public class BaseController {
         ex.printStackTrace();
         return ResponseData.builder()
                 .success(false)
-                .message(ex.getCause().getMessage())
+                .message(ex.getCause() == null ? ex.getMessage() : ex.getCause().getMessage())
                 .build();
     }
 
